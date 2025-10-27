@@ -35,3 +35,6 @@ resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
 #tfenv use 0.14.4
 
 #ou alterar de required_version = "0.14.4" para required_version = ">= 0.14.4"
+
+#Como especifico o profile Terraform aqui (mesmo user que fiz na aws com permissões de admin) configure no cli  o ubuntu, 
+#tem que colcoar o profile  Terraform aws configure --profile Terraform
