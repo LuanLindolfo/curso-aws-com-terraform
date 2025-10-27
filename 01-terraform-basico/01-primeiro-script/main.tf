@@ -1,7 +1,7 @@
-terraform {
+terraform { #deixando fixa a versão do terraform
   required_version = ">= 0.14.4"
 
-  required_providers {
+  required_providers { #informando o provedor que ta usando
     aws = {
       source  = "hashicorp/aws"
       version = "3.23.0"
