@@ -1,5 +1,5 @@
 terraform {
-  required_version = "0.14.4"
+  required_version = ">= 0.14.4"
 
   required_providers {
     aws = {
@@ -11,18 +11,27 @@ terraform {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 provider "aws" {
-  region  = "eu-central-1" # Brasil -> us-east-1
-  profile = "tf014"
+  region  = "us-east-1" # Brasil -> us-east-1, tava eu-central-1
+  profile = "Terraform" #setando o profile (que eu criei na aws) pra não usar o default que ta setando em outra conta
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#private-bucket-w-tags
-resource "aws_s3_bucket" "my-test-bucket" {
-  bucket = "my-tf-test-bucket-123123455745642342342"
+resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
+  bucket = "my-tf-test-bucket-123123455745642342342"  #tornando único com o nome
   acl    = "private"
 
-  tags = {
+  tags = { #tags que eu coloco (opcionalmente) -> bom para faturamento e exploração de custos
     Name        = "My bucket"
     Environment = "Dev"
     Managedby   = "Terraform"
   }
 }
+#depois, faz um cd no caminhod ese arquivo no terminal do ubuntu
+#depois um terraform init
+
+#como o terraform ta na versão 0.14.4, é importante colocar o terraform na versão desejada
+#usando o gerenciador de versão tfenv
+#tfenv install 0.14.4
+#tfenv use 0.14.4
+
+#ou alterar de required_version = "0.14.4" para required_version = ">= 0.14.4"
