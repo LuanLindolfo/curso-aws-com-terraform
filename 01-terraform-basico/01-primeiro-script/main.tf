@@ -38,3 +38,7 @@ resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
 
 #Como especifico o profile Terraform aqui (mesmo user que fiz na aws com permissões de admin) configure no cli  o ubuntu, 
 #tem que colcoar o profile  Terraform aws configure --profile Terraform
+
+#terraform init (no diretoirio do arquivo pra iniciar)
+#terraform plan (pra ver o mapa de planos que vai executar)
+#terraform apply (pra aplicar as configurações de criação)
