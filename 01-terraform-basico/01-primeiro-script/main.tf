@@ -44,3 +44,14 @@ resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
 #terraform init (no diretoirio do arquivo pra iniciar)
 #terraform plan (pra ver o mapa de planos que vai executar)
 #terraform apply (pra aplicar as configurações de criação)
+
+#tfstate é o arquivo responsável por guardar todas as informações de todos os recursos que foram criados nessa pasta
+#e sempre que o terraform quiser alterar, configurar ou destruir algo, ele vai analisar esse arquivo e a aws pra alterar, configurar ou destruir
+#inclui a arvore de dependência pra saber o que vai rodar primeiro e o que vai rodar depois
+
+#terraform console -> entra no modo interativo podendo pesquisar o valor dos atributos e recursos
+#nome_do_recurso.this -> vais listar os atributos do this
+#nome_do_recurso.this.nome_do_atributo -> ver um atributo em específico
+
+#content_type -> baixa o arquivo pra ver
+#json -> vê no navegador o arquivo
