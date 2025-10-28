@@ -43,3 +43,6 @@ resource "aws_s3_bucket" "my-test-bucket" {
 #no plan passa uma flag -> terraform plan -out"tfplan.out"
 #terraform escreve nesse arquivo o output do terraform plan
 #pode executar utilizando esse arquivo com o apply
+
+
+#terraform destroy -> destroi os recursos 
