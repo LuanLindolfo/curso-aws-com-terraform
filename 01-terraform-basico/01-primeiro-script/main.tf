@@ -15,6 +15,7 @@ provider "aws" {
   profile = "Terraform" #setando o profile (que eu criei na aws) pra não usar o default que ta setando em outra conta
 }
 #Pode setar aqui o acess_key e o secret_key junto com o profile
+#ou pode setar no terminal com AWS_ACESS_KEY_ID = (valor) AWS_SECRET_ACESS_KEY = (valor)
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#private-bucket-w-tags
 resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
@@ -27,7 +28,7 @@ resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
     Managedby   = "Terraform"
   }
 }
-#depois, faz um cd no caminhod ese arquivo no terminal do ubuntu
+#depois, faz um cd no caminho desse arquivo no terminal do ubuntu
 #depois um terraform init
 
 #como o terraform ta na versão 0.14.4, é importante colocar o terraform na versão desejada
