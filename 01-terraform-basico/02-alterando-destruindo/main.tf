@@ -28,7 +28,18 @@ resource "aws_s3_bucket" "my-test-bucket" {
     Name        = "My first Terraform bucket"
     Environment = "Dev"
     ManagedBy   = "Terraform"
-    Owner       = "Cleber Gasparoto"
-    CreatedAt   = "2021-01-14"
+    Owner       = "Cleber Gasparoto" #adicionado
+    CreatedAt   = "2021-01-14" #adicionado
   }
 }
+
+#alterando primeiro as tags e o bucket vai ser alterado sem ser recriado
+#adicionou as tags
+#no terminal entrou na pasta atual - para ver se a reconfiguração é válida usa:
+#terraform validate
+
+#terraform fmt -> formata para a validação
+
+#no plan passa uma flag -> terraform plan -out"tfplan.out"
+#terraform escreve nesse arquivo o output do terraform plan
+#pode executar utilizando esse arquivo com o apply
