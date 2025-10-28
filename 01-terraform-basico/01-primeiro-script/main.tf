@@ -55,3 +55,6 @@ resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
 
 #content_type -> baixa o arquivo pra ver
 #json -> vê no navegador o arquivo
+
+#terraform import pra importar um recurso
+#na documentação dos recursos tem o tópico de importação
