@@ -14,6 +14,7 @@ provider "aws" {
   region  = "us-east-1" # Brasil -> us-east-1, tava eu-central-1
   profile = "Terraform" #setando o profile (que eu criei na aws) pra não usar o default que ta setando em outra conta
 }
+#Pode setar aqui o acess_key e o secret_key junto com o profile
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#private-bucket-w-tags
 resource "aws_s3_bucket" "my-test-bucket" { #nome do bucket
