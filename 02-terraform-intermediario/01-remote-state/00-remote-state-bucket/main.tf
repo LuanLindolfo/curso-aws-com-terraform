@@ -1,4 +1,4 @@
-terraform {
+terraform { #bloco de definição de versão do terraform
   required_version = "0.14.4"
 
   required_providers {
@@ -14,12 +14,15 @@ provider "aws" {
   profile = "tf014"
 }
 
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current" {} #@serve pra puxar informação da conta
+#é tipo um pull - puxando informação
 
-resource "aws_s3_bucket" "remote-state" {
+resource "aws_s3_bucket" "remote-state" { #bucket
+#tipo um push
   bucket = "tfstate-${data.aws_caller_identity.current.account_id}"
+  #criando um bucket com o id da conta e concatenando com o data
 
-  versioning {
+  versioning { #habilitando o versionamento do bucket
     enabled = true
   }
 
@@ -43,10 +46,10 @@ resource "aws_dynamodb_table" "lock-table" {
   }
 }
 
-output "remote_state_bucket" {
-  value = aws_s3_bucket.remote-state.bucket
+output "remote_state_bucket" { 
+  value = aws_s3_bucket.remote-state.bucket #expondo o nome do bucket
 }
 
 output "remote_state_bucket_arn" {
-  value = aws_s3_bucket.remote-state.arn
+  value = aws_s3_bucket.remote-state.arn #expondo o arn do bucket
 }
