@@ -1,3 +1,5 @@
+#as pastas s3 e ec2 são módulos diferentes, como se fossem times diferentes
+
 terraform {
   required_version = "0.14.4"
 

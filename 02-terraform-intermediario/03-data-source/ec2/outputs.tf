@@ -9,3 +9,5 @@ output "ami" {
 output "arn" {
   value = aws_instance.web.arn
 }
+
+#pode listar todos esses outputs de uma vez e em json também
