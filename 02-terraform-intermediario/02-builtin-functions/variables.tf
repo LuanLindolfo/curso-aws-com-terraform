@@ -11,7 +11,7 @@ variable "instance_ami" {
   description = ""
   default     = "ami-0233214e13e500f77"
 
-  validation {
+  validation { #valida o nome da ami no tamanho e o come;o com ami-
     condition     = length(var.instance_ami) > 4 && substr(var.instance_ami, 0, 4) == "ami-"
     error_message = "The instance_ami value must be a valid AMI id, starting with \"ami-\"."
   }
