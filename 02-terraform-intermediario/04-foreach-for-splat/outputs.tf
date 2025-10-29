@@ -1,4 +1,4 @@
-output "extensions" {
+output "extensions" { #arquivo mostrando apenas o retorno do arquivo extensions
   value = local.file_extensions
 }
 
@@ -7,7 +7,8 @@ output "extensions_upper" {
 }
 
 output "instance_arns" {
-  value = [for k, v in aws_instance.this : v.arn]
+  value = [for k, v in aws_instance.this : v.arn] #k de key e v de value
+  #quer extrair os valores de aws_instance.this
 }
 
 output "instance_names" {

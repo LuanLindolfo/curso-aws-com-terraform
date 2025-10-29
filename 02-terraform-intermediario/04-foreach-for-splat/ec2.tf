@@ -10,12 +10,15 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "this" {
+  #cada um é uma instância cada uma com sua particularidade, for each permite a criação vasta em um único bloco de código
   for_each = {
-    web = {
+    web = { #each.key
+    #each.value abaixo
       name = "Web server"
       type = "t3.medium"
     }
-    ci_cd = {
+    ci_cd = { #each.key
+    #each.value abaixo
       name = "CI/CD server"
       type = "t3.micro"
     }
