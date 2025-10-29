@@ -1,7 +1,7 @@
-data "template_file" "json" {
-  template = file("template.json.tpl")
+data "template_file" "json" { #gerando o template
+  template = file("template.json.tpl") #lê o arquivo
 
-  vars = {
+  vars = { #passa esses valores pra dentro do arquivo tipo uma interpolação 
     age    = 33
     eye    = "Brown"
     name   = "Cleber"

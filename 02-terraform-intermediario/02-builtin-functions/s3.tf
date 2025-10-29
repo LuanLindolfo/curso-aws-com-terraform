@@ -1,4 +1,4 @@
-resource "random_pet" "bucket" {
+resource "random_pet" "bucket" { #random pet pra nome aleatorio do bucket
   length = 5
 }
 
