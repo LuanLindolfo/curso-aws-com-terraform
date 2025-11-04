@@ -1,8 +1,14 @@
+# Nome do bucket S3 onde o objeto será criado.
 variable "bucket" {}
+
+# Caminho/key do objeto dentro do bucket.
 variable "key" {}
+
+# Caminho local do arquivo que será enviado para o bucket.
 variable "src" {}
 
-# https://github.com/hashicorp/terraform-template-dir/blob/master/variables.tf
+# Mapa de correspondência entre extensões de arquivos e o Content-Type apropriado.
+# As extensões devem começar com ponto e não podem vir duplicadas.
 variable "file_types" {
   description = "Map from file suffixes, which must begin with a period and contain no periods, to the corresponding Content-Type values."
 
@@ -32,17 +38,4 @@ variable "file_types" {
     ".atom"   = "application/atom+xml"
     ".rss"    = "application/rss+xml"
     ".ico"    = "image/vnd.microsoft.icon"
-    ".jar"    = "application/java-archive"
-    ".ttf"    = "font/ttf"
-    ".otf"    = "font/otf"
-    ".eot"    = "application/vnd.ms-fontobject"
-    ".woff"   = "font/woff"
-    ".woff2"  = "font/woff2"
-  }
-}
-
-variable "default_file_type" {
-  type        = string
-  default     = "application/octet-stream"
-  description = "The Content-Type value to use for any files that don't match one of the suffixes given in file_types."
-}
+    ".jar"    = "application
