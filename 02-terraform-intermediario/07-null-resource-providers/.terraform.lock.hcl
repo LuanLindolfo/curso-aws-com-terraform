@@ -1,5 +1,5 @@
-# This file is maintained automatically by "terraform init".
-# Manual edits may be lost in future updates.
+# Arquivo de lock gerado automaticamente por "terraform init".
+# Garante a integridade e versões exatas dos provedores usados no projeto.
 
 provider "registry.terraform.io/hashicorp/aws" {
   version     = "3.23.0"

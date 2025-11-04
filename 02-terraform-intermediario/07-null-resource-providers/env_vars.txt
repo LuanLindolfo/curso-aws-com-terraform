@@ -1,4 +1,4 @@
-bar 1 true
-bar 1 true 2021-03-14T03:02:41Z
+bar 1 true                      # Linha com as variáveis FOO, BAR, BAZ de forma estática.
+bar 1 true 2021-03-14T03:02:41Z # Linhas seguintes adicionam também o timestamp gerado.
 bar 1 true 2021-03-14T03:03:03Z
 bar 1 true 2021-03-14T03:03:38Z
