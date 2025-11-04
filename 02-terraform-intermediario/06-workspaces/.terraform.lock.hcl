@@ -1,10 +1,10 @@
-# This file is maintained automatically by "terraform init".
-# Manual edits may be lost in future updates.
+# Arquivo gerado automaticamente por "terraform init".
+# Contém versões e hashes usados para garantir integridade dos provedores.
 
 provider "registry.terraform.io/hashicorp/aws" {
-  version     = "3.23.0"
-  constraints = "3.23.0"
-  hashes = [
+  version     = "3.23.0"          # Versão exata do provedor AWS usada.
+  constraints = "3.23.0"          # Restrição de versão aplicada.
+  hashes = [                      # Lista de hashes para verificar integridade do provedor.
     "h1:tSznQxPJvolDnmqqaTK9SsJ0bluTws7OAWcnc1t0ABs=",
     "zh:30b0733027c00472618da998bc77967c692e238ae117c07e046fdd7336b83fa3",
     "zh:3677550a8bef8e01c67cb615407dc8a69d32f4e36017033cd6f71a831c99d5de",
