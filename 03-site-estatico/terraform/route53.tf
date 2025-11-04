@@ -1,13 +1,13 @@
 data "aws_route53_zone" "this" {
   count = local.has_domain ? 1 : 0
 
-  name = "${local.domain}."
+  name = "${local.domain}."                         # Nome da zona hospedada Route53 para o domínio principal.
 }
 
 resource "aws_route53_record" "website" {
   count = local.has_domain ? 1 : 0
 
-  name    = local.domain
+  name    = local.domain                            # Registro 'A' para domínio principal.
   type    = "A"
   zone_id = data.aws_route53_zone.this[0].zone_id
 
@@ -21,7 +21,7 @@ resource "aws_route53_record" "website" {
 resource "aws_route53_record" "www" {
   count = local.has_domain ? 1 : 0
 
-  name    = "www.${local.domain}"
+  name    = "www.${local.domain}"                   # Registro 'A' para subdomínio www.
   type    = "A"
   zone_id = data.aws_route53_zone.this[0].zone_id
 
@@ -48,5 +48,5 @@ resource "aws_route53_record" "cert_validation" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = data.aws_route53_zone.this[0].zone_id
+  zone_id         = data.aws_route53_zone.this[0].zone_id            # Cria registros DNS para validar domínio no ACM.
 }
